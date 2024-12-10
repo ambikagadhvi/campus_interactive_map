@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Comment Section</title>
+    <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Images/college-logo.png" alt="College Logo" class="logo">
+            <div>
+                <h1>Blog</h1>
+                <h3>(Post your experience with our website!)</h3>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="campusmap.html">Campus Map</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+            </ul>
+        </nav>
+        <button id="register-btn">Register</button>
+        <span id="username-display" style="display: none;"></span>
+    </header>
+
+    <div id="registration-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Register</h2>
+          <form id="registration-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+      
+    <main>
+        <section class="blog-comments">
+            <h2>Post Your Comments</h2>
+            <form id="post-form" enctype="multipart/form-data" class="comment-form">
+                <input type="hidden" name="username" id="username-input" />
+                <input type="hidden" name="email" id="email-input" />
+                <label for="text-content">Share your experience:</label>
+                <textarea id="text-content" name="text_content" rows="4" required></textarea>
+
+                <label for="image">Attach an image:</label>
+                <input type="file" id="image" name="image" accept="image/*">
+
+                <button type="submit">Post</button>
+            </form>
+            <div class="comments-list">
+                <h3>Recent Comments:</h3>
+                <ul>
+
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Here We R Team | All Rights Reserved</p>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>

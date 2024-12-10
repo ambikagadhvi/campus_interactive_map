@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="campusMap.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="Images/college-logo.png" alt="College Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="campusmap.html">Campus Map</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div style="position: relative;">
+        <input type="text" id="searchInput" placeholder="Search for an important place" oninput="searchPlace()" onfocus="showResults()" onblur="hideResults()">
+        <div id="resultBox" style="position: absolute; top: 35px; left: 0; width: 100%; padding: 10px; border: 1px solid #ccc; background-color: white; display: none; z-index: 10; max-height: 200px; overflow-y: auto;">
+            <!-- Dynamic search results will be appended here -->
+        </div>
+    </div>
+    
+    
+    
+        
+
+    <div class="map-container">
+        <!-- Main floor image map -->
+        <img src="Images/Map_Images/Main_Floor1.jpg" usemap="#floorMap" alt="Map of the Building" class="map-image">
+
+        <!-- Dots for buildings -->
+        <div class="dot" style="top: 315px; left: 333px;" onclick="showDetails('Building A')"></div>
+
+        <div class="dot" style="top: 413px; left: 243px;" onclick="showDetails('Building B')"></div>
+
+        <div class="dot" style="top: 463px; left: 355px;" onclick="showDetails('Building C')"></div>
+
+        <div class="dot" style="top: 333px; left: 78px;" onclick="showDetails('Building CA')"></div>
+
+        <div class="dot" style="top: 585px; left: 230px;" onclick="showDetails('Building M')"></div>
+
+        <div class="dot" style="top: 505px; left: 291px;" onclick="showDetails('Building K')"></div>
+
+        <div class="dot" style="top: 325px; left: 467px;" onclick="showDetails('Building H')"></div>
+
+        <div class="dot" style="top: 375px; left: 467px;" onclick="showDetails('Building D')"></div>
+
+        <div class="dot" style="top: 489px; left: 449px;" onclick="showDetails('Building J')"></div>
+
+        <div class="dot" style="top: 188px; left: 568px;" onclick="showDetails('Building F')"></div>
+
+        <div class="dot" style="top: 335px; left: 554px;" onclick="showDetails('Building E')"></div>
+
+        <div class="dot" style="top: 461px; left: 530px;" onclick="showDetails('Building N')"></div>
+
+        <div class="dot" style="top: 526px; left: 515px;" onclick="showDetails('Building T')"></div>
+
+        <div class="dot" style="top: 152px; left: 694px;" onclick="showDetails('Building R')"></div>
+
+        <div class="dot" style="top: 176px; left: 743px;" onclick="showDetails('Building G')"></div>
+
+        <div class="dot" style="top: 259px; left: 728px;" onclick="showDetails('Building X')"></div>
+
+        <div class="dot" style="top: 445px; left: 720px;" onclick="showDetails('Building P')"></div>
+
+        <div class="dot" style="top: 445px; left: 840px;" onclick="showDetails('Building S')"></div>
+
+        <div class="dot" style="top: 266px; left: 1014px;" onclick="showDetails('Building Z')"></div>
+
+        <div class="dot" style="top: 399px; left: 1019px;" onclick="showDetails('Building V')"></div>
+        <!-- Add more dots here for each building, adjusting position and onclick event -->
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="buildingDetails"></h2>
+            <div id="image-slider">
+                <button id="prevBtn" onclick="changeImage(-1)">&#8249;</button>
+                <img id="buildingImage" src="" alt="Building Image">
+                <button id="nextBtn" onclick="changeImage(1)">&#8250;</button>
+            </div>
+            <p id="buildingDescription"></p>
+            <button class="info-btn" onclick="showImportantInfo()">Show Important Places</button>
+        </div>
+    </div>
+    
+    
+    
+    
+
+    <script src="campusMap.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Here We R Team | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
